@@ -11,6 +11,7 @@ import renan.daboitsky.sistemaHotel.service.ClienteService;
 import java.net.URI;
 import java.util.List;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("sistemahotel/v1.0/cliente")
 public class ClienteController {
