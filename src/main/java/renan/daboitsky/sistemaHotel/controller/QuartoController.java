@@ -27,7 +27,7 @@ public class QuartoController {
         return ResponseEntity.ok(service.listar());
     }
 
-    @GetMapping(name = "/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<QuartoResponse> buscar(@PathVariable Long id) {
         return ResponseEntity.ok(service.buscar(id));
     }
@@ -44,12 +44,12 @@ public class QuartoController {
         return ResponseEntity.created(uri).body(quarto);
     }
 
-    @PutMapping(name = "/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<QuartoResponse> atualizar(@PathVariable Long id, @RequestBody QuartoUpdateRequest request) {
         return ResponseEntity.ok(service.atualizar(id, request));
     }
 
-    @DeleteMapping(name = "/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> excluir(@PathVariable Long id) {
         service.excluir(id);
         return ResponseEntity.noContent().build();

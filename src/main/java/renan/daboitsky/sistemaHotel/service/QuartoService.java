@@ -6,6 +6,7 @@ import org.springframework.web.server.ResponseStatusException;
 import renan.daboitsky.sistemaHotel.dto.quarto.QuartoRequest;
 import renan.daboitsky.sistemaHotel.dto.quarto.QuartoResponse;
 import renan.daboitsky.sistemaHotel.dto.quarto.QuartoUpdateRequest;
+import renan.daboitsky.sistemaHotel.enums.StatusQuarto;
 import renan.daboitsky.sistemaHotel.mapper.QuartoMapper;
 import renan.daboitsky.sistemaHotel.model.Quarto;
 import renan.daboitsky.sistemaHotel.repository.QuartoRepository;
@@ -33,6 +34,8 @@ public class QuartoService {
 
     public QuartoResponse cadastrar(QuartoRequest request) {
         Quarto quarto = mapper.toEntity(request);
+
+        quarto.setStatusQuarto(StatusQuarto.DISPONIVEL);
 
         return mapper.toResponse(repository.save(quarto));
     }

@@ -1,9 +1,9 @@
 package renan.daboitsky.sistemaHotel.enums;
 
 public enum StatusQuarto {
-    DISPONÍVEL,
+    DISPONIVEL,
     RESERVADO,
     OCUPADO,
     EM_LIMPEZA,
-    MANUTENÇÃO
+    MANUTENCAO
 }

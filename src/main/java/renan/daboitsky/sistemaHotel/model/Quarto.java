@@ -23,10 +23,15 @@ public class Quarto {
     private Long id;
 
     private Integer numero;
+
+    @Enumerated(EnumType.STRING)
     private TipoQuarto tipo;
+
     private Integer capacidade;
     private Double preco;
-    private StatusQuarto status;
+
+    @Enumerated(EnumType.STRING)
+    private StatusQuarto statusQuarto;
 
     @OneToMany(mappedBy = "quarto")
     private List<Reserva> reservas;
