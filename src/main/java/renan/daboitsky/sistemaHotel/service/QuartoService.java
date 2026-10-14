@@ -55,5 +55,38 @@ public class QuartoService {
         repository.deleteById(id);
     }
 
+    public QuartoResponse disponibilizar(Long id) {
+        Quarto quarto = repository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Não foi encontrado nenhum cliente com esse ID"));
 
+        quarto.setStatusQuarto(StatusQuarto.DISPONIVEL);
+        return mapper.toResponse(repository.save(quarto));
+    }
+
+    public QuartoResponse ocupar(Long id) {
+        Quarto quarto = repository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Não foi encontrado nenhum cliente com esse ID"));
+
+        quarto.setStatusQuarto(StatusQuarto.OCUPADO);
+        return mapper.toResponse(repository.save(quarto));
+    }
+
+    public QuartoResponse reservar(Long id) {
+        Quarto quarto = repository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Não foi encontrado nenhum cliente com esse ID"));
+
+        quarto.setStatusQuarto(StatusQuarto.RESERVADO);
+        return mapper.toResponse(repository.save(quarto));
+    }
+
+    public QuartoResponse emManutencao(Long id) {
+        Quarto quarto = repository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Não foi encontrado nenhum cliente com esse ID"));
+
+        quarto.setStatusQuarto(StatusQuarto.MANUTENCAO);
+        return mapper.toResponse(repository.save(quarto));
+    }
+
+    public QuartoResponse emLimpeza(Long id) {
+        Quarto quarto = repository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Não foi encontrado nenhum cliente com esse ID"));
+
+        quarto.setStatusQuarto(StatusQuarto.EM_LIMPEZA);
+        return mapper.toResponse(repository.save(quarto));
+    }
 }

@@ -54,4 +54,29 @@ public class QuartoController {
         service.excluir(id);
         return ResponseEntity.noContent().build();
     }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<QuartoResponse> disponibilizar(@PathVariable Long id) {
+        return ResponseEntity.ok(service.disponibilizar(id));
+    }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<QuartoResponse> ocupar(@PathVariable Long id) {
+        return ResponseEntity.ok(service.ocupar(id));
+    }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<QuartoResponse> reservar(@PathVariable Long id) {
+        return ResponseEntity.ok(service.reservar(id));
+    }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<QuartoResponse> emManutencao(@PathVariable Long id) {
+        return ResponseEntity.ok(service.emManutencao(id));
+    }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<QuartoResponse> emLimpeza(@PathVariable Long id) {
+        return ResponseEntity.ok(service.emLimpeza(id));
+    }
 }
