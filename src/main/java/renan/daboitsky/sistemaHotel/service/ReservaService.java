@@ -42,4 +42,10 @@ public class ReservaService {
     public ReservaResponse buscar(Long id) {
         return mapper.toResponse(reservaRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Não foi encontrado nenhum cliente com esse ID")));
     }
+
+    public void excluir(Long id) {
+        Reserva reserva = reservaRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Não foi encontrado nenhum cliente com esse ID"));
+
+        reservaRepository.deleteById(id);
+    }
 }
