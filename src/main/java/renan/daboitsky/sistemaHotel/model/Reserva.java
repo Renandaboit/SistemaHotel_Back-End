@@ -21,11 +21,11 @@ public class Reserva {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "cliente_id")
+    @JoinColumn(name = "id_cliente")
     private Cliente cliente;
 
     @ManyToOne
-    @JoinColumn(name = "quarto_id")
+    @JoinColumn(name = "id_quarto")
     private Quarto quarto;
 
     private Date checkIn;
