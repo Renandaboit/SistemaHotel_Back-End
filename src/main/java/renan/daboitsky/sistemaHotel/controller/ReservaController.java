@@ -12,7 +12,7 @@ import java.util.List;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("sistemahotel/v1.0/quarto")
+@RequestMapping("sistemahotel/v1.0/reserva")
 public class ReservaController {
     private final ReservaService service;
 
