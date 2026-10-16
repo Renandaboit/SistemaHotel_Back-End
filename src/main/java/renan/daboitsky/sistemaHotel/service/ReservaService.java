@@ -1,6 +1,7 @@
 package renan.daboitsky.sistemaHotel.service;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 import renan.daboitsky.sistemaHotel.dto.reserva.ReservaRequest;
 import renan.daboitsky.sistemaHotel.dto.reserva.ReservaResponse;
@@ -12,6 +13,7 @@ import renan.daboitsky.sistemaHotel.repository.ReservaRepository;
 
 import java.util.List;
 
+@Service
 public class ReservaService {
     private final ReservaRepository reservaRepository;
     private final ClienteRepository clienteRepository;

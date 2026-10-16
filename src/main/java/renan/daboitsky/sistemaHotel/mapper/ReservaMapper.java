@@ -1,11 +1,13 @@
 package renan.daboitsky.sistemaHotel.mapper;
 
+import org.springframework.stereotype.Component;
 import renan.daboitsky.sistemaHotel.dto.reserva.ReservaRequest;
 import renan.daboitsky.sistemaHotel.dto.reserva.ReservaResponse;
 import renan.daboitsky.sistemaHotel.model.Reserva;
 
 import java.util.List;
 
+@Component
 public class ReservaMapper {
 
     public Reserva toEntity (ReservaRequest request) {
