@@ -10,6 +10,14 @@ import java.util.List;
 @Component
 public class ReservaMapper {
 
+    private final ClienteMapper clienteMapper;
+    private final QuartoMapper quartoMapper;
+
+    public ReservaMapper(ClienteMapper clienteMapper, QuartoMapper quartoMapper) {
+        this.clienteMapper = clienteMapper;
+        this.quartoMapper = quartoMapper;
+    }
+
     public Reserva toEntity (ReservaRequest request) {
         return Reserva.builder()
                 .checkIn(request.checkIn())
@@ -21,8 +29,8 @@ public class ReservaMapper {
     public ReservaResponse toResponse (Reserva reserva) {
         return new ReservaResponse(
                 reserva.getId(),
-                reserva.getCliente(),
-                reserva.getQuarto(),
+                clienteMapper.toResponse(reserva.getCliente()),
+                quartoMapper.toResponse(reserva.getQuarto()),
                 reserva.getCheckIn(),
                 reserva.getCheckOut(),
                 reserva.getHospedes(),

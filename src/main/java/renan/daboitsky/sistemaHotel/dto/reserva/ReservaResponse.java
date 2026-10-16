@@ -1,16 +1,15 @@
 package renan.daboitsky.sistemaHotel.dto.reserva;
 
-import jakarta.persistence.*;
-import renan.daboitsky.sistemaHotel.model.Cliente;
-import renan.daboitsky.sistemaHotel.model.Quarto;
+import renan.daboitsky.sistemaHotel.dto.cliente.ClienteResponse;
+import renan.daboitsky.sistemaHotel.dto.quarto.QuartoResponse;
 
 import java.sql.Date;
 
 public record ReservaResponse (
 
         Long id,
-        Cliente cliente,
-        Quarto quarto,
+        ClienteResponse cliente,
+        QuartoResponse quarto,
         Date checkIn,
         Date checkOut,
         Integer hospedes,
