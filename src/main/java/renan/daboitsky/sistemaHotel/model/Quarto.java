@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import renan.daboitsky.sistemaHotel.enums.StatusQuarto;
 import renan.daboitsky.sistemaHotel.enums.TipoQuarto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Builder
@@ -32,6 +33,9 @@ public class Quarto {
 
     @Enumerated(EnumType.STRING)
     private StatusQuarto statusQuarto;
+
+    @OneToMany(mappedBy = "quarto")
+    private List<Imagem> imagens = new ArrayList<>();
 
     @OneToMany(mappedBy = "quarto")
     private List<Reserva> reservas;

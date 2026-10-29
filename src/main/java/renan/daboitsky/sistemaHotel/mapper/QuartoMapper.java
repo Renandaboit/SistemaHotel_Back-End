@@ -16,6 +16,7 @@ public class QuartoMapper {
                 .tipo(request.tipo())
                 .capacidade(request.capacidade())
                 .preco(request.preco())
+                .imagens(request.imagens())
                 .build();
     }
 
@@ -26,7 +27,8 @@ public class QuartoMapper {
                 quarto.getTipo(),
                 quarto.getCapacidade(),
                 quarto.getPreco(),
-                quarto.getStatusQuarto()
+                quarto.getStatusQuarto(),
+                quarto.getImagens()
         );
     }
 
@@ -40,5 +42,6 @@ public class QuartoMapper {
         quarto.setCapacidade(request.capacidade());
         quarto.setPreco(request.preco());
         quarto.setStatusQuarto(request.status());
+        quarto.setImagens(request.imagens());
     }
 }
