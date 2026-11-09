@@ -1,6 +1,5 @@
 package renan.daboitsky.sistemaHotel.controller;
 
-import ch.qos.logback.core.pattern.util.RegularEscapeUtil;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -11,9 +10,11 @@ import renan.daboitsky.sistemaHotel.service.ImagemService;
 import java.net.URI;
 import java.util.List;
 
-@RestController("sistemahotel/v1.0/imagem")
+@CrossOrigin(origins = "*")
+@RestController
+@RequestMapping("sistemahotel/v1.0/imagem")
 public class ImagemController {
-    private ImagemService service;
+    private final ImagemService service;
 
     public ImagemController(ImagemService service) {
         this.service = service;

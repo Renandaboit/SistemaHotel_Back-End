@@ -1,6 +1,7 @@
 package renan.daboitsky.sistemaHotel.service;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 import renan.daboitsky.sistemaHotel.dto.imagem.ImagemRequest;
 import renan.daboitsky.sistemaHotel.dto.imagem.ImagemResponse;
@@ -12,6 +13,7 @@ import renan.daboitsky.sistemaHotel.repository.QuartoRepository;
 
 import java.util.List;
 
+@Service
 public class ImagemService {
     private final ImagemRepository repository;
     private final ImagemMapper mapper;
@@ -30,7 +32,7 @@ public class ImagemService {
     public ImagemResponse cadastrar(ImagemRequest request) {
         Quarto quarto = quartoRepository.findById(request.quartoId()).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Não achou o quarto com esse ID"));
 
-        Imagem imagem = mapper.toEntity(request, quarto);
+        Imagem imagem = repository.save(mapper.toEntity(request, quarto));
         return mapper.toResponse(imagem);
     }
 

@@ -5,5 +5,5 @@ import renan.daboitsky.sistemaHotel.model.Quarto;
 public record ImagemResponse(
         Long imagemId,
         String url,
-        Quarto quarto
+        Long quartoId
 ) {}
